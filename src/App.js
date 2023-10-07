@@ -19,6 +19,7 @@ function App() {
   const velocidadViento=data.daily.windspeed_10m_max;
   const unidadViento=data.daily_units.windspeed_10m_max;
   const humedad=data.hourly.relativehumidity_2m[10];
+  const unidadHumedad=data.hourly_units.relativehumidity_2m;
   const visibilidad=data.hourly.visibility[10]
   const visibilidadUnidad=data.hourly_units.visibility;
   const horaAmanecer=data.daily.sunrise;
@@ -33,7 +34,7 @@ function App() {
     <Indiceuv indiceUv={indiceUv}/>
     <Viento velocidadViento={velocidadViento} unidadViento={unidadViento}/>
     <AmanYAtard horaAmanecer={horaAmanecer} horaAtardecer={horaAtardecer}/>
-    <Humedad humedad={humedad}/>
+    <Humedad humedad={humedad} unidadHumedad={unidadHumedad}/>
     <Visibilidad visibilidad={visibilidad} visibilidadUnidad={visibilidadUnidad}/>
     <CalidadAire calidadAire={calidadAire}/>
     <MaximoMinimo temperaturaMinima={temperaturaMinima} temperaturaMaxima={temperaturaMaxima} unidadTemperatura={unidadTemperatura}/>
