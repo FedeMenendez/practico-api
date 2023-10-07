@@ -1,8 +1,8 @@
-function CalidadAire(){
+function CalidadAire(props){
     return(
         <div className='calidad'>
             <p>CALIDAD AIRE</p> 
-            <p>no tiene datos en el json</p>
+            <p>{props.calidadAire}</p>
         </div>
     );
 }

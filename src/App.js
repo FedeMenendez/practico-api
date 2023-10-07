@@ -21,6 +21,7 @@ function App() {
   const visibilidad=data.hourly.visibility[10]
   const horaAmanecer=data.daily.sunrise;
   const horaAtardecer=data.daily.sunset;
+  const calidadAire=data.hourly.european_aqi[10];
   return(
   <div className='App'> 
     <p className='texto1'>Today</p>  
@@ -32,7 +33,7 @@ function App() {
     <AmanYAtard horaAmanecer={horaAmanecer} horaAtardecer={horaAtardecer}/>
     <Humedad humedad={humedad}/>
     <Visibilidad visibilidad={visibilidad}/>
-    <CalidadAire/>
+    <CalidadAire calidadAire={calidadAire}/>
     <MaximoMinimo temperaturaMinima={temperaturaMinima} temperaturaMaxima={temperaturaMaxima} unidadTemperatura={unidadTemperatura}/>
   </div>
   );
