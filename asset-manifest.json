@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/FedeMenendez/practico-api/static/css/main.0bc692c6.css",
+    "main.js": "/FedeMenendez/practico-api/static/js/main.a1099125.js",
+    "static/js/787.f66cf832.chunk.js": "/FedeMenendez/practico-api/static/js/787.f66cf832.chunk.js",
+    "index.html": "/FedeMenendez/practico-api/index.html",
+    "main.0bc692c6.css.map": "/FedeMenendez/practico-api/static/css/main.0bc692c6.css.map",
+    "main.a1099125.js.map": "/FedeMenendez/practico-api/static/js/main.a1099125.js.map",
+    "787.f66cf832.chunk.js.map": "/FedeMenendez/practico-api/static/js/787.f66cf832.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0bc692c6.css",
+    "static/js/main.a1099125.js"
+  ]
+}
