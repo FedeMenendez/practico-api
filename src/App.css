@@ -1,0 +1,229 @@
+.App{
+  /* text-align: center; */
+  display:grid;
+  position: absolute;
+  background-color: lightblue;
+  grid-template-areas: "temp    texto1      texto1        texto1"
+                       "temp    temphoras   temphoras     temphoras"
+                       "temp    texto       texto         texto"
+                       "temp    indice      viento        amanece"
+                       "maxima  humedad     visibilidad   calidad";
+
+  grid-template-rows: 30px 200px 30px 125px 125px;
+  column-gap:10px;
+  row-gap: 10px;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+.temperatura{
+  text-align: center;
+  grid-area: temp;
+  border: 25px;
+}
+
+.temperaturahoras{
+  grid-area: temphoras;
+  background-color: rgba(233, 132, 95, 0.976);
+  margin-right: 20px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.amanecer{
+  text-align: center;
+  grid-area: amanece;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.calidad{
+  text-align: center;
+  grid-area: calidad;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.humedad{
+  text-align: center;
+  grid-area: humedad;
+  background-color: white;
+}
+
+.indice{
+  text-align: center;
+  grid-area: indice;
+  background-color: white;
+}
+
+.viento{
+  text-align: center;
+  grid-area: viento;
+  background-color: white;
+}
+
+.visibilidad{
+  text-align: center;
+  grid-area: visibilidad;
+  background-color: white;
+}
+
+.maxima{
+  text-align: center;
+  grid-area: maxima;
+  background-color: rgb(255, 128, 0);
+  margin-left: 20px;
+}
+.texto{
+  grid-area: texto;
+  text-align: start;
+}
+.texto1{
+  grid-area: texto1;
+  text-align: start;
+}
+#textotemperatura{
+  margin-left: 15px;
+  margin-top: 30px;
+}
+hr{
+  background-color: black;
+  height: 3px;
+  margin-left: 40px;
+  margin-top: -20px;
+  width: 96%;
+}
+#barras{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding: 0;
+  width: 20px;
+  background-color: aliceblue;
+}
+.barra1{
+  height: 100px;
+  margin-top: -110px;
+  margin-left: 45px;
+}
+
+#textobarra1{
+  margin-left: 35px;
+}
+ .barra2{
+  height: 120px;
+  margin-top: -173px;
+  margin-left: 120px;
+}
+
+#textobarra2{
+  margin-left: 80px;
+}
+
+.barra3{
+  height: 60px;
+  margin-top: -113px;
+  margin-left: 195px;
+}
+
+#textobarra3{
+  margin-left: 125px;
+}
+
+.barra4{
+  height: 60px;
+  margin-top: -113px;
+  margin-left: 270px;
+}
+
+#textobarra4{
+  margin-left: 170px;
+}
+
+.barra5{
+  height: 60px;
+  margin-top: -113px;
+  margin-left: 345px;
+}
+
+#textobarra5{
+  margin-left: 215px;
+}
+
+.barra6{
+  height: 60px;
+  margin-top: -113px;
+  margin-left: 420px;
+}
+
+#textobarra6{
+  margin-left: 260px;
+}
+.barra7{
+  height: 60px;
+  margin-top: -113px;
+  margin-left: 495px;
+}
+
+#textobarra7{
+  margin-left: 305px;
+}
+
+.barra8{
+  height: 60px;
+  margin-top: -113px;
+  margin-left: 570px;
+}
+
+#textobarra8{
+  margin-left: 350px;
+}
+
+.barra9{
+  height: 60px;
+  margin-top: -113px;
+  margin-left: 645px;
+}
+
+#textobarra9{
+  margin-left: 395px;
+}
+
+.barra10{
+  height: 60px;
+  margin-top: -113px;
+  margin-left: 720px;
+}
+
+#textobarra10{
+  margin-left: 440px;
+}
+ .barra11{
+  height: 60px;
+  margin-top: -113px;
+  margin-left: 795px;
+}
+
+#textobarra11{
+  margin-left: 485px;
+}
+
+.barra12{
+  height: 60px;
+  margin-top: -113px;
+  margin-left: 870px;
+}
+
+#textobarra12{
+  margin-left: 860px;
+}
+
+.barra13{
+  height: 60px;
+  margin-top: -113px;
+  margin-left: 945px;
+}
+
+#textobarra13{
+  margin-left: 935px;
+}
