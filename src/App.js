@@ -17,6 +17,7 @@ function App() {
   const temperaturaMaxima= data.daily.temperature_2m_max;
   const indiceUv=data.daily.uv_index_max;
   const velocidadViento=data.daily.windspeed_10m_max;
+  const unidadViento=data.daily_units.windspeed_10m_max;
   const humedad=data.hourly.relativehumidity_2m[10];
   const visibilidad=data.hourly.visibility[10]
   const horaAmanecer=data.daily.sunrise;
@@ -29,7 +30,7 @@ function App() {
     <TemperaturaHoras/>
     <p className='texto'>Highlights</p>
     <Indiceuv indiceUv={indiceUv}/>
-    <Viento velocidadViento={velocidadViento}/>
+    <Viento velocidadViento={velocidadViento} unidadViento={unidadViento}/>
     <AmanYAtard horaAmanecer={horaAmanecer} horaAtardecer={horaAtardecer}/>
     <Humedad humedad={humedad}/>
     <Visibilidad visibilidad={visibilidad}/>
