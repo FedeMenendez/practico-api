@@ -1,6 +1,6 @@
 {
-  "name": "practico-api",
   "homepage":"http:/github.com/FedeMenendez/practico-api",
+  "name": "practico-api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
