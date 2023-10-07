@@ -22,4 +22,4 @@ Por ultimo se agrego en el archivo App.css los estilos de acuerdo al dashboard s
 
 ## Autor ✒️
 * **Federico Menendez**  [Github](https://github.com/FedeMenendez)
-* **Pagina web** (https://fedemenendez.github.io/practico3/)
+* **Pagina web** (https://fedemenendez.github.io/practico-api/)
