@@ -2,7 +2,7 @@ function Visibilidad(props){
     return(
         <div className='visibilidad'>
             <p>VISIBILIDAD</p>
-            <p>{props.visibilidad}</p>
+            <p>{props.visibilidad}{visibilidadUnidad}</p>
         </div>
     );
 }
