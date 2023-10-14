@@ -1,4 +1,4 @@
-function TemperaturaHoras (){
+function TemperaturaHoras (props){
     return(
         <div className='temperaturahoras'>
             <p id='textotemperatura'>40°</p>
@@ -6,7 +6,7 @@ function TemperaturaHoras (){
             <p id='textotemperatura'>0°</p>
             <hr></hr>
             <div className='barras'>
-            <p className='barra1' id='barras'></p>
+            <p className='barra1' id='barras' style={{height: '50px'}}></p>
             <p id='textobarra1'>00:00</p>
             <p className='barra2' id='barras'></p>
             <p id='textobarra2'>02:00</p>
