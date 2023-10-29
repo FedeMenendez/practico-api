@@ -1,49 +1,67 @@
 .App{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "Clima  Transporte";
+}
+.Transporte{
+  grid-area: Transporte;
+  text-align: start;
+  margin-left: 5%;
+  /* width: 50%; */
+
+}
+.Clima{
   /* text-align: center; */
+  grid-area: Clima;
   display:grid;
   position: absolute;
   background-color: lightblue;
-  grid-template-areas: "temp    texto1      texto1        texto1"
-                       "temp    temphoras   temphoras     temphoras"
-                       "temp    texto       texto         texto"
-                       "temp    indice      viento        amanece"
-                       "maxima  humedad     visibilidad   calidad";
+  grid-template-areas: "texto1      texto1      texto1        texto1"
+                       "temphoras   temphoras   temphoras     temphoras"
+                       "temp        texto       texto         texto"
+                       "temp        indice      viento        amanece"
+                       "maxima      humedad     visibilidad   calidad";
 
-  grid-template-rows: 30px 200px 30px 125px 125px;
-  column-gap:10px;
-  row-gap: 10px;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
+  width: 50%;
+  grid-template-rows: 4.8vh 32vh 4.8vh 20vh 20vh;
+  column-gap:0.7vw;
+  row-gap: 1.6vh;
+  top: 1.6vh;
+  left: 0.7vw;
+  right: 0.7vw;
+  bottom: 1.6vh;
+}
+p{
+  text-align: center;
+  margin: 0.5vh;
 }
 .temperatura{
   text-align: center;
   grid-area: temp;
-  border: 25px;
-  margin-top: 50px;
-  font-size: 35px;
+  border: 4vh;
+  font-size: 4vh;
 }
 
 .temperaturahoras{
   grid-area: temphoras;
   background-color: rgba(233, 132, 95, 0.976);
-  margin-right: 20px;
-  box-sizing: border-box;
-  padding: 10px;
+  margin-right: 1.46vw;
+  /* box-sizing: border-box; */
+  padding: 1.6vh;
+  scroll-behavior: auto;
 }
 .amanecer{
   text-align: center;
   grid-area: amanece;
   background-color: white;
-  margin-right: 20px;
+  margin-right: 3.2vh;
 }
 
 .calidad{
   text-align: center;
   grid-area: calidad;
   background-color: white;
-  margin-right: 20px;
+  margin-right: 3.2vh;
 }
 
 .humedad{
@@ -74,41 +92,44 @@
   text-align: center;
   grid-area: maxima;
   background-color: rgb(255, 128, 0);
-  margin-left: 20px;
+  margin-left: 3.2vh;
 }
 .texto{
   grid-area: texto;
   text-align: start;
+  margin-top: 1vh;
 }
 .texto1{
   grid-area: texto1;
   text-align: start;
+  margin-top: 1vh;
 }
+
 #textotemperatura{
-  margin-left: 15px;
-  margin-top: 30px;
+  margin-left: 1.1vw;
+  margin-top: 4.8vh;
 }
 hr{
   background-color: black;
-  height: 3px;
-  margin-left: 40px;
-  margin-top: 20px;
+  height: 0.2vw;
+  margin-left: 1vh;
+  margin-top: 3.2vh;
   width: 96%;
 }
 #barras{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: flex-end;
-  margin-top: -10px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -1.6vh;
   position: absolute;
-  padding: 0;
-  width: 40px;
+  width: 3vw;
   background-color: aliceblue;
   
 }
 .barra1{
-  margin-left: 45px;
+  margin-left: 0.7vw;
 }
 
 #textobarra{
@@ -116,46 +137,51 @@ hr{
 }
 
 .barra2{
-  margin-left: 120px;
+  margin-left: 4.1vw;
 }
 
 .barra3{
-  margin-left: 195px;
+  margin-left: 7.5vw;
 }
 
 .barra4{
-  margin-left: 270px;
+  margin-left: 10.9vw;
 }
 
 .barra5{
-  margin-left: 345px;
+  margin-left: 14.3vw;
 }
 
 .barra6{
-  margin-left: 420px;
+  margin-left: 17.7vw;
 }
 
 .barra7{
-  margin-left: 495px;
+  margin-left: 21.1vw;
 }
 
 .barra8{
-  margin-left: 570px;
+  margin-left: 24.5vw;
 }
 
 .barra9{
-  margin-left: 645px;
+  margin-left: 27.9vw;
 }
 
 .barra10{
-  margin-left: 720px;
+  margin-left: 31.3vw;
 }
 
 .barra11{
-  margin-left: 795px;
+  margin-left: 34.7vw;
 }
 
 .barra12{
-  margin-left: 870px;
+  margin-left: 38.1vw;
+}
+.leaflet-container {
+  margin: 1vh;
+  width: 100wh; 
+  height: 94vh;
 }
 
