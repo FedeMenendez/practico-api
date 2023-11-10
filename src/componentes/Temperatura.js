@@ -6,6 +6,7 @@ function Temperatura (props){
             <p>{auxHora[0]}</p> 
             <p>{auxHora[1]}</p>
             <p>{props.temperatura}{props.unidadTemperatura}</p>
+            <p>{props.ubicacion}</p>
         </div>
 
     );

@@ -37,6 +37,12 @@ Ademas para no mostrar todos los colectivos que arroje la api se decidio utiliza
 Cuando se realiza una seleccion se llama a la funcion handleSelectChange, mediante el atributo onchange del select, en donde lo que se realiza es guardar en la variable de estado selectedLinea a la ruta elegida y guardar en la variable jsonFiltrado todos los datos que coincidan con la ruta seleccionada, para asi con este json poder colocar los marker y popup en el mapa.
 Por ultimo queda remarcar que se debia realizar el pedido a la api, esta no se pudo realizar ya que la extension cors instalada no estaba funcionando por lo que se decidio tomar los datos de un json estatico a partir de un request realizado a la api. Vale remarcar que las lineas de codigo utilizadas para realizar el pedido a la api estan comentadas por lo que realizando unos pequeños ajustes en las variables y acomodando las lineas para realizar el pedido en el momento que se inicializa el componente y solucionando este problema con la extension deberia quedar funcionando con el pedido a la api 
 
+# Cuarta Entrega
+En esta parte lo primero que se cambió el color y el tamaño de la letra de las temperaturas maximas y minimas del dia.
+Tambien se agrego el pedido a la api de la calidad de aire y se modificó los valores para determinar segun la variable solicitada en la api, por lo que el valor ya no está estático.
+Lo otro que se agrego fue colocar un select en el inicio para seleccionar la ciudad que desea el usuario y que no quede con una ubicacion estática, ademas de colocar en el dashboard la ubicacion seleccionada.
+En la app de transporte se agrego el codigo necesario para que realice el pedido a la api cada 31 segundos.
+
 ## Autor ✒️
 * **Federico Menendez**  [Github](https://github.com/FedeMenendez)
 * **Pagina web** (https://fedemenendez.github.io/practico-api/)

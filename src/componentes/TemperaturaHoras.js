@@ -1,9 +1,6 @@
 function TemperaturaHoras (props){
     return(
         <div className='temperaturahoras'>
-            {/* <p id='textotemperatura'>0°</p>
-            <p id='textotemperatura'>20°</p>
-            <p id='textotemperatura'>40°</p> */}
             <hr></hr>
             <div className='barras'>
             <div className='barra1' id='barras' style={{height:props.temperaturaHoras[0]*5}}><p id='textobarra'>00:00 {props.temperaturaHoras[0]}</p></div>

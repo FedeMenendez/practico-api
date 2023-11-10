@@ -93,6 +93,13 @@ p{
   grid-area: maxima;
   background-color: rgb(255, 128, 0);
   margin-left: 3.2vh;
+  font-size: 6vh;
+}
+#maximo{
+  color: red;
+}
+#minimo{
+  color: blue;
 }
 .texto{
   grid-area: texto;

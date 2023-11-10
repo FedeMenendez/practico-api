@@ -11,13 +11,53 @@ import MaximoMinimo from './componentes/MaximoMinimo';
 import Transporte from './componentes/Transporte';
 //import data from './resp.json';
 import {useState} from 'react';
-import { useEffect} from 'react';
+//import { useEffect} from 'react';
 function App() {
   const [datosClima,setDatosClima]=useState(null)
+  const [datosAire,setDatosAire]=useState(null)
   const [loading, setLoading]=useState(true)
-  useEffect(() => {
+  const [loadingAire, setLoadingAire]=useState(true)
+  const [loadingCiudad, setLoadingCiudad]=useState(true);
+  const [nombreCiudad, setNombreCiudad] = useState ('');
+  const [datosCiudad, setDatosCiudad] = useState (null);
+  const [ubicacion,setUbicacion]=useState();
+  let datoPais=[];
+  
+  function handleClick(e){
+    if(e===''){
+      setNombreCiudad('+');
+    }
+    setNombreCiudad(e.target.value);
+  }
+  function enClick () {
+    fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${nombreCiudad}&count=10&language=es&format=json`)
+    .then((resp) => resp.json())
+    .then((data) => {
+    setDatosCiudad(data);
+    setLoadingCiudad(false);
+      })
+    }
+  if(!loadingCiudad){
+    datoPais[0]='Seleccione'
+    let j=1;
+    for (let i=0;i<datosCiudad.results.length;i++){
+      datoPais[j]=datosCiudad.results[i].country + ',' + datosCiudad.results[i].admin1;
+      j++
+      }
+    }
+        
+  function handleSelectChange(event){
+    let i=0;
+    while(datoPais[i]!==event.target.value){
+      i++
+      }
+    setUbicacion(datoPais[i]);
+    const latitude=datosCiudad.results[i-1].latitude;
+    const longitude=datosCiudad.results[i-1].longitude;
+  
+ // useEffect(() => {
     setLoading(true);
-    fetch("https://api.open-meteo.com/v1/forecast?latitude=-31.4135&longitude=-64.181&current=temperature_2m,relativehumidity_2m,windspeed_10m&hourly=temperature_2m,relativehumidity_2m,visibility,uv_index&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=America%2FSao_Paulo&forecast_days=1")
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relativehumidity_2m,windspeed_10m,is_day&hourly=temperature_2m,relativehumidity_2m,visibility,uv_index&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=America%2FSao_Paulo&forecast_days=1`)
       .then((resp) => resp.json())
       .then((data) => {
         setDatosClima(data);
@@ -26,9 +66,21 @@ function App() {
       .catch((ex) => {
         console.error('error cargando API',ex);
       });
-  }, []);
-  
-  if(!loading){
+  //}, []);
+  //useEffect(() => {
+    setLoading(true);
+    fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${latitude}&longitude=${longitude}&current=european_aqi&timezone=America%2FSao_Paulo`)
+      .then((resp) => resp.json())
+      .then((data) => {
+        setDatosAire(data);
+        setLoadingAire(false);
+      })
+      .catch((ex) => {
+        console.error('error cargando API Calidad de aire',ex);
+      });
+  //}, []);
+  } 
+  if(!loading&&!loadingAire){
     const horaActual=datosClima.current.time;
     let aux1=horaActual.toString();
     aux1=aux1.slice(11,-3)
@@ -48,14 +100,14 @@ function App() {
     const visibilidadUnidad=datosClima.hourly_units.visibility;
     const horaAtardecer=datosClima.daily.sunset;
     const horaAmanecer=datosClima.daily.sunrise;
-    const calidadAire=10//datosClima.hourly.european_aqi[10];
+    const calidadAire=datosAire.current.european_aqi;
     const temperaturaHoras=datosClima.hourly.temperature_2m;
   
     return(
       <div className='App'>
         <div className='Clima'>
           <p className='texto1'>Today</p> 
-          <Temperatura temperatura={temperatura} unidadTemperatura={unidadTemperatura} horaActual={horaActual}/>
+          <Temperatura temperatura={temperatura} unidadTemperatura={unidadTemperatura} horaActual={horaActual} ubicacion={ubicacion}/>
           <TemperaturaHoras temperaturaHoras={temperaturaHoras}/>
           <p className='texto'>Highlights</p>
           <Indiceuv indiceUv={indiceUv}/>
@@ -67,7 +119,6 @@ function App() {
           <MaximoMinimo temperaturaMinima={temperaturaMinima} temperaturaMaxima={temperaturaMaxima} unidadTemperatura={unidadTemperatura}/>
         </div> 
         <div className='Transporte'>
-          {/* <h1>Transporte</h1> */}
           <Transporte/>
         </div>
       </div>
@@ -75,7 +126,17 @@ function App() {
   }
   else{
     return(
-      <h1>Loading......</h1>
+      
+      <div>
+        <input type='text' id="nombre" placeholder='Nombre Ciudad' value={nombreCiudad} onChange={handleClick}></input>
+        <button id="ingresoNombre" onClick={enClick}>Ingreso Ciudad</button>
+        <select onChange={handleSelectChange}>
+          {datoPais.map((datos)=>(
+            <option>{datos}</option>
+          ))}
+        </select>
+        <h1>Loading......</h1>
+      </div>
     )
   }
 }
